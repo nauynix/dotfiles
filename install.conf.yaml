@@ -3,11 +3,7 @@
 - link:
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
-
-
-- clean: ['~']
-
-- link:
     ~/.gitconfig: gitconfig
 
-
+- shell:
+  - chsh -s $(which zsh)

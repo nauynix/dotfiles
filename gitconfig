@@ -3,3 +3,5 @@
 	email = nauynix@gmail.com
 [core]
 	editor = vim
+[credential]
+	helper = store
