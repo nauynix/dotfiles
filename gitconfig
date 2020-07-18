@@ -2,4 +2,4 @@
 	name = nauynix
 	email = nauynix@gmail.com
 [core]
-	editor = emacs
+	editor = vim
