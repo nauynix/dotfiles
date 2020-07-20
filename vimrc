@@ -1,3 +1,26 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set nocompatible " VI compatible mode is disabled so that VIm things work
+
+" =============================================================================
+"   PLUGINS
+" =============================================================================
+"
+call plug#begin('~/.vim/plugged')
+
+" Text Manipulation
+Plug 'Valloric/YouCompleteMe'       " Autocomplete
+Plug 'tpope/vim-sensible'           " Defaults everyone should agree on
+Plug 'preservim/nerdcommenter'      " Comment with \c
+Plug 'vim-syntastic/syntastic'      " Check syntax
+
+" GUI enhancements
+Plug 'itchyny/lightline.vim'          " Better Status Bar
+Plug 'mhinz/vim-startify'             " Better start screen
+
+call plug#end()
+
+" " Change to blinking line cursor in insert mode
 if has("autocmd")
   au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
   au InsertEnter,InsertChange *
@@ -9,16 +32,10 @@ if has("autocmd")
   au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
 
-call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'tpope/vim-sensible'
-Plug 'preservim/nerdcommenter'
-Plug 'vim-syntastic/syntastic'
-
-call plug#end()
-
+"---------------
+"Syntax and indent
+"---------------
 set number relativenumber " Set relative line number
 
 syntax on " turn on syntax highlighting
@@ -63,8 +80,6 @@ set smartcase
 set wildmode=longest,list
 set wildmenu
 set mouse+=a " enable mouse mode (scrolling, selection, etc)
-
-" Unbind some useless/annoying default key bindings.
 
 " Disable audible bell because it's annoying.
 set noerrorbells visualbell t_vb=

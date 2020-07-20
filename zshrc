@@ -24,7 +24,7 @@ alias gs="git status"
 alias gc="git commit"
 
 alias mv="mv -i"
-alias mkdir=mkdir -p"
+alias mkdir="mkdir -p"
 alias df="df -h"
 
 # Uncomment the following line if pasting URLs and other text is messed up.

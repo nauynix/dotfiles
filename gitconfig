@@ -3,5 +3,8 @@
 	email = nauynix@gmail.com
 [core]
 	editor = vim
+    excludesfile = ~/.gitignore_global
 [credential]
 	helper = store
+[alias]
+    log = log --all --graph --decorate --oneline
