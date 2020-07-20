@@ -7,6 +7,7 @@ set nocompatible " VI compatible mode is disabled so that VIm things work
 " =============================================================================
 "
 call plug#begin('~/.vim/plugged')
+ 
 
 " Text Manipulation
 Plug 'Valloric/YouCompleteMe'       " Autocomplete
@@ -83,6 +84,8 @@ set mouse+=a " enable mouse mode (scrolling, selection, etc)
 
 " Disable audible bell because it's annoying.
 set noerrorbells visualbell t_vb=
+
+set background=dark
 
 "------------------
 " Syntastic settings
