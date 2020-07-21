@@ -27,6 +27,15 @@ alias mv="mv -i"
 alias mkdir="mkdir -p"
 alias df="df -h"
 
+alias python="python3"
+alias pdb="pdb3"
+
+# Tmux
+alias t="tmux"
+alias ta="t a -t"
+alias tls="t ls"
+alias tn="t new -t"
+
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 

@@ -7,21 +7,28 @@ set nocompatible " VI compatible mode is disabled so that VIm things work
 " =============================================================================
 "
 call plug#begin('~/.vim/plugged')
- 
 
 " Text Manipulation
 Plug 'Valloric/YouCompleteMe'       " Autocomplete
 Plug 'tpope/vim-sensible'           " Defaults everyone should agree on
-Plug 'preservim/nerdcommenter'      " Comment with \c
 Plug 'vim-syntastic/syntastic'      " Check syntax
+Plug 'christoomey/vim-tmux-navigator' " Set navigation with tmux
 
-" GUI enhancements
+" Commands
+Plug 'tpope/vim-surround'           " Surround with 's'
+Plug 'tpope/vim-commentary'         " Comment with 'gc'
+Plug 'vim-scripts/ReplaceWithRegister' " Replace with 'gr'
+Plug 'christoomey/vim-system-copy'      " System copy and paste with 'cp/cv'
+Plug 'kana/vim-textobj-user'            " Define own commands
+Plug 'kana/vim-textobj-entire'          " Entire page with 'ae/ie'
+
+" GUI
 Plug 'itchyny/lightline.vim'          " Better Status Bar
 Plug 'mhinz/vim-startify'             " Better start screen
 
 call plug#end()
 
-" " Change to blinking line cursor in insert mode
+" Change to blinking line cursor in insert mode
 if has("autocmd")
   au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
   au InsertEnter,InsertChange *
@@ -33,13 +40,13 @@ if has("autocmd")
   au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
 
-
 "---------------
 "Syntax and indent
 "---------------
 set number relativenumber " Set relative line number
 
 syntax on " turn on syntax highlighting
+syntax enable
 set showmatch " show matching braces when text indicator is over them
 filetype plugin indent on " enable file type detection
 set autoindent
