@@ -21,6 +21,7 @@ Plug 'vim-scripts/ReplaceWithRegister' " Replace with 'gr'
 Plug 'christoomey/vim-system-copy'      " System copy and paste with 'cp/cv'
 Plug 'kana/vim-textobj-user'            " Define own commands
 Plug 'kana/vim-textobj-entire'          " Entire page with 'ae/ie'
+Plug 'gabrielsimoes/cfparser.vim'       " Codeforces
 
 " GUI
 Plug 'itchyny/lightline.vim'          " Better Status Bar
@@ -112,6 +113,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 0
