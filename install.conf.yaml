@@ -6,6 +6,5 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.tmux.conf: tmux.conf
-
-- shell:
-  - chsh -s $(which zsh)
+    ~/.vim/.generate_template.cpp: generate_template.cpp
+    ~/.vim/.generate_tc.cpp: generate_tc.cpp

@@ -94,16 +94,36 @@ set noerrorbells visualbell t_vb=
 
 set background=dark
 
+"__________________
+" Snippets
+"__________________
+
+" Competitive programming defaults
+nnoremap ,inc : -1read $HOME/.vim/.generate_template.cpp<CR>16jo
+nnoremap ,tc : -1read $HOME/.vim/.generate_tc.cpp<CR>18jo
 "------------------
 " Syntastic settings
 "------------------
+" Toggle Synastic
+cabbrev stm SyntasticToggleMode<CR> 
 let g:syntastic_sh_checkers = ["sh", "shellcheck"]
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
