@@ -9,7 +9,7 @@ set nocompatible " VI compatible mode is disabled so that VIm things work
 call plug#begin('~/.vim/plugged')
 
 " Text Manipulation
-Plug 'Valloric/YouCompleteMe'       " Autocomplete
+"Plug 'Valloric/YouCompleteMe'       " Autocomplete
 Plug 'tpope/vim-sensible'           " Defaults everyone should agree on
 Plug 'vim-syntastic/syntastic'      " Check syntax
 Plug 'christoomey/vim-tmux-navigator' " Set navigation with tmux
@@ -22,6 +22,8 @@ Plug 'christoomey/vim-system-copy'      " System copy and paste with 'cp/cv'
 Plug 'kana/vim-textobj-user'            " Define own commands
 Plug 'kana/vim-textobj-entire'          " Entire page with 'ae/ie'
 Plug 'gabrielsimoes/cfparser.vim'       " Codeforces
+Plug 'christoomey/vim-run-interactive'  " Interactive
+"Plug 'djoshea/vim-autoread'
 
 " GUI
 Plug 'itchyny/lightline.vim'          " Better Status Bar
@@ -48,7 +50,7 @@ set number relativenumber " Set relative line number
 
 syntax on " turn on syntax highlighting
 syntax enable
-set showmatch " show matching braces when text indicator is over them
+"set showmatch " show matching braces when text indicator is over them
 filetype plugin indent on " enable file type detection
 set autoindent
 
@@ -59,7 +61,7 @@ autocmd WinLeave * setlocal nocursorline
 augroup END
 
 set clipboard^=unnamed,unnamedplus
-
+hi CursorLine   cterm=NONE ctermbg=236 ctermfg=NONE
 set shortmess+=I " disable startup message
 set nu " number lines
 set rnu " relative line numbering
@@ -89,6 +91,8 @@ set smartcase
 set wildmode=longest,list
 set wildmenu
 set mouse+=a " enable mouse mode (scrolling, selection, etc)
+set nowrap "No wrap
+set autoread " Auto update
 
 " Disable audible bell because it's annoying.
 set noerrorbells visualbell t_vb=
@@ -100,14 +104,19 @@ set background=dark
 "__________________
 
 " Competitive programming defaults
-nnoremap ,inc : -1read $HOME/.vim/.generate_template.cpp<CR>16jo
-nnoremap ,tc : -1read $HOME/.vim/.generate_tc.cpp<CR>18jo
+autocmd filetype cpp nnoremap ,inc : -1read $HOME/.vim/.generate_template.cpp<CR>16jo
+autocmd filetype cpp nnoremap ,tc : -1read $HOME/.vim/.generate_tc.cpp<CR>18jo
+autocmd filetype cpp nnoremap ut :w <bar> !g++ -ulimit -Wall -Wno-unused-result -std=c++17   -O2   % -o %:r && ./%:r <CR>
+autocmd filetype cpp nnoremap uh :w<CR>:!printf "\033c" && printf "================\n  Compiling...\n================\n" && time g++ -g -std=c++17 -Wall -Wextra -Wno-unused-result -D LOCAL -O2 %:r.cpp -o %:r 2>&1 \| tee %:r.cerr && printf "\n================\n   Running...\n================\n" && time ./%:r < %:r.in > %:r.out 2> %:r.err && printf "\n\n\n\n"<CR>
+inoremap {<CR> {<CR>}<ESC>O
+filetype indent on
+
 "------------------
 " Syntastic settings
 "------------------
 " Toggle Synastic
 cabbrev stm SyntasticToggleMode<CR> 
-let g:syntastic_sh_checkers = ["sh", "shellcheck"]
+"let g:syntastic_sh_checkers = ["sh", "shellcheck"]
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
