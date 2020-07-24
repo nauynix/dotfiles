@@ -63,7 +63,7 @@ augroup END
 set clipboard^=unnamed,unnamedplus
 hi CursorLine   cterm=NONE ctermbg=236 ctermfg=NONE
 set shortmess+=I " disable startup message
-set nu " number lines
+"set nu " number lines
 set rnu " relative line numbering
 set incsearch " incremental search (as string is being typed)
 set hls " highlight search
