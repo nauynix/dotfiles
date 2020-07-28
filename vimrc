@@ -13,10 +13,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'           " Defaults everyone should agree on
 Plug 'vim-syntastic/syntastic'      " Check syntax
 Plug 'christoomey/vim-tmux-navigator' " Set navigation with tmux
+Plug 'benmills/vimux'               " Call command in tmux
 
 " Commands
-Plug 'tpope/vim-surround'           " Surround with 's'
+Plug 'tpope/vim-surround'           " Surround with 's' cs'<
 Plug 'tpope/vim-commentary'         " Comment with 'gc'
+Plug 'tpope/vim-vinegar'            " Netrw with '-'
 Plug 'vim-scripts/ReplaceWithRegister' " Replace with 'gr'
 Plug 'christoomey/vim-system-copy'      " System copy and paste with 'cp/cv'
 Plug 'kana/vim-textobj-user'            " Define own commands
@@ -28,6 +30,7 @@ Plug 'christoomey/vim-run-interactive'  " Interactive
 " GUI
 Plug 'itchyny/lightline.vim'          " Better Status Bar
 Plug 'mhinz/vim-startify'             " Better start screen
+Plug 'luochen1990/rainbow' " Bracket Colourizer
 
 call plug#end()
 
@@ -53,6 +56,7 @@ syntax enable
 "set showmatch " show matching braces when text indicator is over them
 filetype plugin indent on " enable file type detection
 set autoindent
+let g:rainbow_active = 1 " Set rainbow brackets on
 
 augroup CursorLineOnlyInActiveWindow
 autocmd!
@@ -107,9 +111,16 @@ set background=dark
 autocmd filetype cpp nnoremap ,inc : -1read $HOME/.vim/.generate_template.cpp<CR>16jo
 autocmd filetype cpp nnoremap ,tc : -1read $HOME/.vim/.generate_tc.cpp<CR>18jo
 autocmd filetype cpp nnoremap ut :w <bar> !g++ -ulimit -Wall -Wno-unused-result -std=c++17   -O2   % -o %:r && ./%:r <CR>
-autocmd filetype cpp nnoremap uh :w<CR>:!printf "\033c" && printf "================\n  Compiling...\n================\n" && time g++ -g -std=c++17 -Wall -Wextra -Wno-unused-result -D LOCAL -O2 %:r.cpp -o %:r 2>&1 \| tee %:r.cerr && printf "\n================\n   Running...\n================\n" && time ./%:r < %:r.in > %:r.out 2> %:r.err && printf "\n\n\n\n"<CR>
+autocmd filetype cpp nnoremap uh :w <bar> :VimuxPromptCommand<CR>cf test <CR>
+" autocmd filetype cpp nnoremap uh :w<CR>:!printf "\033c" && printf "================\n  Compiling...\n================\n" && time g++ -g -std=c++17 -Wall -Wextra -Wno-unused-result -D LOCAL -O2 %:r.cpp -o %:r 2>&1 \| tee %:r.cerr && printf "\n================\n   Running...\n================\n" && time ./%:r < %:r.in > %:r.out 2> %:r.err && printf "\n\n\n\n"<CR>
 inoremap {<CR> {<CR>}<ESC>O
 filetype indent on
+" vv to generate new vertical split
+nnoremap <silent> vv <C-w>v
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
 
 "------------------
 " Syntastic settings
