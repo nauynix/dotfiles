@@ -127,7 +127,7 @@ let g:VimuxHeight = "40" " Fatter split
 " map <Leader>vl :VimuxRunLastCommand<CR>
  map <Leader>t :VimuxCloseRunner<CR>
 " autocmd filetype cpp nnoremap <Leader>t :w <bar> !g++ -ulimit -Wall -Wno-unused-result -std=c++17   -O2   % -o %:r && ./%:r <CR>
-autocmd filetype cpp nnoremap <Leader>h :w <bar>:call VimuxOpenRunner()<bar>:call VimuxSendText("cf test")<bar>:call VimuxSendKeys("Enter")<bar>:call VimuxSendText("1")<bar>:call VimuxSendKeys("Enter")<CR>
+autocmd filetype cpp nnoremap <Leader>h :w <bar>:call VimuxOpenRunner()<bar>:call VimuxSendText("cf test")<bar>:call VimuxSendKeys("Enter")<bar>:call VimuxSendText("1")<bar>:call VimuxSendKeys("Enter")<CR><CR>
 
 "------------------
 " Syntastic settings
