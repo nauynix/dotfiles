@@ -95,7 +95,7 @@ set smartcase
 set wildmode=longest,list
 set wildmenu
 set mouse+=a " enable mouse mode (scrolling, selection, etc)
-set nowrap "No wrap
+" set nowrap "No wrap
 set autoread " Auto update
 
 " Disable audible bell because it's annoying.
@@ -110,17 +110,24 @@ set background=dark
 " Competitive programming defaults
 autocmd filetype cpp nnoremap ,inc : -1read $HOME/.vim/.generate_template.cpp<CR>16jo
 autocmd filetype cpp nnoremap ,tc : -1read $HOME/.vim/.generate_tc.cpp<CR>18jo
-autocmd filetype cpp nnoremap \t :w <bar> !g++ -ulimit -Wall -Wno-unused-result -std=c++17   -O2   % -o %:r && ./%:r <CR>
-autocmd filetype cpp nnoremap \h :w <bar> :VimuxPromptCommand<CR>cf test <CR>
 " autocmd filetype cpp nnoremap uh :w<CR>:!printf "\033c" && printf "================\n  Compiling...\n================\n" && time g++ -g -std=c++17 -Wall -Wextra -Wno-unused-result -D LOCAL -O2 %:r.cpp -o %:r 2>&1 \| tee %:r.cerr && printf "\n================\n   Running...\n================\n" && time ./%:r < %:r.in > %:r.out 2> %:r.err && printf "\n\n\n\n"<CR>
 inoremap {<CR> {<CR>}<ESC>O
 filetype indent on
 " vv to generate new vertical split
 nnoremap <silent> vv <C-w>v
+
+"------------------
+" Vimux settings
+"------------------
+let g:VimuxOrientation = "h" " Vertical split
+let g:VimuxHeight = "40" " Fatter split
 " Prompt for a command to run
-map <Leader>vp :VimuxPromptCommand<CR>
+" map <Leader>vp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
-map <Leader>vl :VimuxRunLastCommand<CR>
+" map <Leader>vl :VimuxRunLastCommand<CR>
+ map <Leader>t :VimuxCloseRunner<CR>
+" autocmd filetype cpp nnoremap <Leader>t :w <bar> !g++ -ulimit -Wall -Wno-unused-result -std=c++17   -O2   % -o %:r && ./%:r <CR>
+autocmd filetype cpp nnoremap <Leader>h :w <bar>:call VimuxOpenRunner()<bar>:call VimuxSendText("cf test")<bar>:call VimuxSendKeys("Enter")<bar>:call VimuxSendText("1")<bar>:call VimuxSendKeys("Enter")<CR>
 
 "------------------
 " Syntastic settings
