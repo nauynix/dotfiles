@@ -5,13 +5,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/Documents/IO:$HOME/.local/.bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/Documents:$HOME/.local/.bin
 
 export ZSH="/home/xinyuan/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 HYPHEN_INSENSITIVE="true"
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # Alias
 alias gt="sh ~/.scripts/generate_template.sh"
@@ -60,7 +61,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="ddmmyy"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
