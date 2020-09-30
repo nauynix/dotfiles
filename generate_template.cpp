@@ -4,6 +4,9 @@
 using namespace std;
 #define REP(i, n) for(int i = 0; i < n; i++)
 #define all(x) (x).begin(), (x).end()
+#define pb push_back
+#define fi first
+#define se second
 typedef pair<int, int> PII;
 typedef vector<int> VI;
 typedef vector<string> VS;
