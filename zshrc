@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/Documents:$HOME/.local/.bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/Documents:$HOME/.local/.bin:$HOME/.gtd
 
 export ZSH="/home/xinyuan/.oh-my-zsh"
 
