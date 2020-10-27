@@ -114,6 +114,10 @@ inoremap {<CR> {<CR>}<ESC>O
 filetype indent on
 " vv to generate new vertical split
 nnoremap <silent> vv <C-w>v
+" Clear highlighting on escape in normal mode
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
+
 
 "------------------
 " Vimux settings
