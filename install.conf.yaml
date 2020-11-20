@@ -6,7 +6,7 @@
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
-    ~/.tmux.conf: tmux.conf
+    ~/.tmux.conf.local: tmux.conf.local
     ~/.vim/.generate_template.cpp: generate_template.cpp
     ~/.vim/.generate_tc.cpp: generate_tc.cpp
     ~/.vim/.ycm_extra_conf.py: ycm_extra_conf.py

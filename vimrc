@@ -124,14 +124,21 @@ nnoremap <esc>^[ <esc>^[
 "------------------
 let g:VimuxOrientation = "h" " Vertical split
 let g:VimuxHeight = "40" " Fatter split
-" Prompt for a command to run
-" map <Leader>vp :VimuxPromptCommand<CR>
-" Run last command executed by VimuxRunCommand
-" map <Leader>vl :VimuxRunLastCommand<CR>
 " autocmd filetype cpp nnoremap <Leader>t :w <bar> !g++ -ulimit -Wall -Wno-unused-result -std=c++17   -O2   % -o %:r && ./%:r <CR>
 " autocmd filetype cpp nnoremap <Leader>h :w <bar>:call VimuxOpenRunner()<bar>:call VimuxSendText("cf test")<bar>:call VimuxSendKeys("Enter")<bar>:call VimuxSendText("1")<bar>:call VimuxSendKeys("Enter")<CR><CR>
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+" Inspect runner
+map <Leader>vi :VimuxInspectRunner<CR>
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+" Zoom the tmux runner pane
+map <Leader>vz :VimuxZoomRunner<CR>
+" Close runner
 autocmd filetype cpp nnoremap <Leader>t :VimuxCloseRunner<CR>
+" Run cf test
 autocmd filetype cpp nnoremap <Leader>h :w <bar>:call VimuxRunCommand("cf test")<CR>
+" Run cf submit
 autocmd filetype cpp nnoremap <Leader>n :w <bar>:call VimuxRunCommand("cf submit")<CR>
 
 "------------------
