@@ -225,7 +225,7 @@ tmux_conf_theme_right_separator_sub="|"
 #     - #{username_ssh}
 VOLUME='#(amixer sget Master | grep "Mono:" | awk -F"[][]" {" print \$2"}) 🎵'
 tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
-tmux_conf_theme_status_right=" #{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_percentage, #{battery_percentage},} ,#(curl -m 1 wttr.in?format=3 2>/dev/null; sleep 900), $VOLUME, %R , %d %b | #{username}#{root} | #{hostname} "
+tmux_conf_theme_status_right=" #{prefix}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_percentage, #{battery_percentage},} ,#(curl -m 1 wttr.in?format=1 2>/dev/null; sleep 900), $VOLUME, %R , %d %b | #{username}#{root} | #{hostname} "
 # status left style
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
 tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_9,$tmux_conf_theme_colour_10,$tmux_conf_theme_colour_11"
