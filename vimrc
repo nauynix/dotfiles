@@ -164,6 +164,8 @@ let g:syntastic_style_error_symbol = '⁉️'
 let g:syntastic_warning_symbol = '⚠️'
 let g:syntastic_style_warning_symbol = '💩'
 
+let g:syntastic_cpp_compiler_options = ' -std=c++17'
+
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn

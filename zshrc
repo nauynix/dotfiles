@@ -5,7 +5,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/Documents:$HOME/.local/.bin:$HOME/.gtd
+typeset -U path
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
+path+=$HOME/Documents
+path+=$HOME/.local/.bin
+path+=$HOME/.gtd
+
+export CLASSPATH=$HOME/OneDrive/Oxford/Year\ 1/Hilary\ term/IP/scalatest-app_2.12-3.2.2.jar
+
 
 export ZSH="/home/xinyuan/.oh-my-zsh"
 
