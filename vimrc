@@ -1,5 +1,5 @@
 
-set nocompatible " VI compatible mode is disabled so that VIm things work
+set nocompatible " VI compatible mode is disabled so that Vim things work
 
 " =============================================================================
 "   PLUGINS
@@ -8,7 +8,6 @@ set nocompatible " VI compatible mode is disabled so that VIm things work
 call plug#begin('~/.vim/plugged')
 
 " Text Manipulation
-"Plug 'Valloric/YouCompleteMe'       " Autocomplete
 Plug 'tpope/vim-sensible'           " Defaults everyone should agree on
 Plug 'vim-syntastic/syntastic'      " Check syntax
 Plug 'christoomey/vim-tmux-navigator' " Set navigation with tmux
@@ -18,18 +17,17 @@ Plug 'benmills/vimux'               " Call command in tmux
 Plug 'tpope/vim-surround'           " Surround with 's' cs'<
 Plug 'tpope/vim-commentary'         " Comment with 'gc'
 Plug 'tpope/vim-vinegar'            " Netrw with '-'
-Plug 'vim-scripts/ReplaceWithRegister' " Replace with 'gr'
 Plug 'christoomey/vim-system-copy'      " System copy and paste with 'cp/cv'
 Plug 'kana/vim-textobj-user'            " Define own commands
 Plug 'kana/vim-textobj-entire'          " Entire page with 'ae/ie'
-Plug 'gabrielsimoes/cfparser.vim'       " Codeforces
 Plug 'christoomey/vim-run-interactive'  " Interactive
-"Plug 'djoshea/vim-autoread'
 
 " GUI
 Plug 'itchyny/lightline.vim'          " Better Status Bar
 Plug 'mhinz/vim-startify'             " Better start screen
 Plug 'luochen1990/rainbow' " Bracket Colourizer
+" Plug 'psliwka/vim-smoothie' "Smooth vim scrolling with ^D, ^U, ^F, ^B
+Plug 'yuttie/comfortable-motion.vim'
 
 call plug#end()
 
@@ -50,7 +48,7 @@ endif
 "---------------
 set number relativenumber " Set relative line number
 
-syntax on " turn on syntax highlighting
+syntax on " turn on syntax highlighti
 syntax enable
 "set showmatch " show matching braces when text indicator is over them
 filetype plugin indent on " enable file type detection
@@ -137,9 +135,11 @@ map <Leader>vz :VimuxZoomRunner<CR>
 " Close runner
 autocmd filetype cpp nnoremap <Leader>t :VimuxCloseRunner<CR>
 " Run cf test
-autocmd filetype cpp nnoremap <Leader>h :w <bar>:call VimuxRunCommand("cf test")<CR>
+autocmd filetype cpp nnoremap <Leader>h :w <bar>:call VimuxRunCommand("clear && cf test")<CR>
 " Run cf submit
-autocmd filetype cpp nnoremap <Leader>n :w <bar>:call VimuxRunCommand("cf submit")<CR>
+autocmd filetype cpp nnoremap <Leader>n :w <bar>:call VimuxRunCommand("clear && cf submit")<CR>
+" Run scala
+autocmd filetype scala nnoremap <Leader>h :w <bar>:call VimuxRunCommand("clear && fsc a.scala && scala a.scala")<CR>
 
 "------------------
 " Syntastic settings
