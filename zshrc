@@ -1,11 +1,13 @@
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Mac
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 
-nvm use 12.18.0
+# nvm use 12.18.0
+#
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -13,16 +15,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# typeset -U path
-# export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
-# path+=$HOME/Documents
-# path+=$HOME/.local/.bin
-# path+=$HOME/.gtd
-# path+=$HOME/Development/flutter/bin
+typeset -U path
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
+path+=$HOME/Documents
+path+=$HOME/.local/.bin
+path+=$HOME/.gtd
+path+=$HOME/Development/flutter/bin
 
-# export CLASSPATH=$HOME/OneDrive/Oxford/Year\ 1/Hilary\ term/IP/scalatest-app_2.12-3.2.2.jar
 
-# export ZSH="/home/xinyuan/.oh-my-zsh"
+export ZSH="/home/xinyuan/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -30,7 +31,7 @@ HYPHEN_INSENSITIVE="true"
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 # Alias
-# alias gt="sh ~/.scripts/generate_template.sh"
+alias gt="sh ~/.scripts/generate_template.sh"
 alias fd=fdfind
 alias v='f -e vim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
