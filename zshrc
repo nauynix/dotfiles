@@ -1,12 +1,25 @@
 
 # Mac
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [ "$(uname 2> /dev/null)" != "Linux" ]; then 
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# eval "$(direnv hook zsh)"
+    eval "$(direnv hook zsh)"
+    nvm use 12.18.0
+    export ZSH="/Users/xinyuan/.oh-my-zsh"
+# Linux
+else
+    typeset -U path
+    export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
+    path+=$HOME/Documents
+    path+=$HOME/.local/.bin
+    path+=$HOME/.gtd
+    path+=$HOME/Development/flutter/bin
+    export ZSH="/home/xinyuan/.oh-my-zsh"
+    alias gt="sh ~/.scripts/generate_template.sh"
+fi
 
-# nvm use 12.18.0
 #
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -15,15 +28,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-typeset -U path
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
-path+=$HOME/Documents
-path+=$HOME/.local/.bin
-path+=$HOME/.gtd
-path+=$HOME/Development/flutter/bin
-
-
-export ZSH="/home/xinyuan/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -31,7 +35,6 @@ HYPHEN_INSENSITIVE="true"
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 # Alias
-alias gt="sh ~/.scripts/generate_template.sh"
 alias fd=fdfind
 alias v='f -e vim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
@@ -52,14 +55,6 @@ alias t="tmux"
 alias ta="t a -t"
 alias tls="t ls"
 alias tn="t new -t"
-
-# # Turn off menu bar, only for linux
-# if [ "$TERM" = "xterm-256color" ]; then
-#   xprop \
-#     -id $(xdotool getactivewindow) \
-#     -f _MOTIF_WM_HINTS 32c \
-#     -set _MOTIF_WM_HINTS "0x2, 0x0, 0x0, 0x0, 0x0"
-# fi
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -86,7 +81,7 @@ HIST_STAMPS="ddmmyy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions)
 
-source ~/.oh-my-zsh/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 eval "$(fasd --init auto)"
 
