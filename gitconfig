@@ -8,3 +8,4 @@
 	helper = store
 [alias]
     log = log --all --graph --decorate --oneline
+    uncommit = reset HEAD~

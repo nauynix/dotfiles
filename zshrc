@@ -5,7 +5,8 @@ if [ "$(uname 2> /dev/null)" != "Linux" ]; then
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-    eval "$(direnv hook zsh)"
+    # eval "$(direnv hook zsh)"
+    emulate zsh -c "$(direnv export zsh)"
     nvm use 12.18.0
     export ZSH="/Users/xinyuan/.oh-my-zsh"
 # Linux
@@ -28,11 +29,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
+if [ "$(uname 2> /dev/null)" != "Linux" ]; then 
+    emulate zsh -c "$(direnv hook zsh)"
+fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 HYPHEN_INSENSITIVE="true"
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # Alias
 alias fd=fdfind
