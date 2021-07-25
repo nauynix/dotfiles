@@ -20,4 +20,5 @@ Install font
 ### tmux 
 `sudo apt install tmux`
 ### ohmytmux
+`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 ### vim-plug
