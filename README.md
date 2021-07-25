@@ -3,6 +3,10 @@ Run
 ```sh ./install```
 
 Install:
+
+[Dvorak Qwerty](https://github.com/prog666/dvorak-qwerty)
+[Remap keys second method](https://ictsolved.github.io/remap-key-in-linux/)
+
 ### alacritty 
 `sudo apt install alacritty`
 ### zsh 
