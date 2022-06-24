@@ -3,6 +3,7 @@
 
 - link:
     ~/.vimrc: vimrc
+    ~/.config/nvim/init.vim: init.vim
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
