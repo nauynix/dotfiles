@@ -29,7 +29,7 @@ hash -d w=/mnt/c/Users/xinyuan
 
 # Alias
 alias fd=fdfind
-alias v='f -e vim' # quick opening files with vim
+alias v='f -e nvim' # quick opening files with vim
 alias m='f -e mplayer' # quick opening files with mplayer
 alias o='a -e xdg-open' # quick opening files with xdg-open
 alias ll="ls -lh"
@@ -71,7 +71,7 @@ eval "$(fasd --init auto)"
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
   export EDITOR='mvim'
 fi
