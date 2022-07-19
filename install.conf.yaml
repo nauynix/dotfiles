@@ -6,4 +6,5 @@
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
+    ~/.p10k.zsh: .p10k.zsh
     #~/.vim/.generate_template.cpp: generate_template.cpp

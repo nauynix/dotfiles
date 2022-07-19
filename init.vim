@@ -46,4 +46,4 @@ call plug#end()
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|venv)|(\.(swp|ico|git|svn))$'
 
 " Initialise nvim-comment
-lua require('Comment').setup()
+" lua require('Comment').setup()
