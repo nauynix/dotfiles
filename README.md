@@ -21,5 +21,13 @@ Set font in Windows terminal, VS code
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
-       
-```sh ./install```
+
+```
+mkdir ~/.config
+mkdir ~/.config/nvim
+rm ~/.zshrc
+sh ./install
+```
+
+Then go to nvim and run
+```:PlugInstall```
