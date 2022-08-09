@@ -1,5 +1,20 @@
 - clean: ['~']
 
+- create:
+    - mkdir ~/.config
+    - mkdir ~/.config/nvim
+
+- shell:
+    - [sudo apt install zsh, Install zsh]
+    - [chsh -s $(which zsh), Making zsh the default shell]
+    - [sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Install ohmyzsh]
+    - [git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k, Install powerlevel10k]
+    - [sudo apt install fasd, Install fasd]
+    - [git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions, Install zsh-autosuggestions]
+    - [sudo apt install neovim, Install neovim]
+    - [sh -c "curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Install neovimplug]
+    - [rm ~/.zshrc, Remove default zsh]
+    
 
 - link:
     ~/.config/nvim/init.vim: init.vim
