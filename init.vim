@@ -33,7 +33,7 @@ Plug 'vim-airline/vim-airline'
 " Automatic indentation
 Plug 'tpope/vim-sleuth'
 " Autocomplete
-Plug 'neoclide/coc.nvim', {'branch':'release'}
+" Plug 'neoclide/coc.nvim', {'branch':'release'}
 " Entire page with 'ae/ie'
 " Plug 'kana/vim-textobj-entire'
 " Motion plugin using s
