@@ -5,6 +5,8 @@ path+=$HOME/.local/.bin
 path+=/mnt/c/Users/xinyuan/AppData/Local/Programs/Microsoft\ VS\ Code/bin
 export ZSH="/home/xinyuan/.oh-my-zsh"
 
+# Ros2
+source /opt/ros/foxy/setup.zsh
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
