@@ -1,8 +1,8 @@
 - clean: ['~']
 
 - create:
-    - mkdir ~/.config
-    - mkdir ~/.config/nvim
+    - ~/.config
+    - ~/.config/nvim
 
 - shell:
     - [sudo apt install zsh, Install zsh]
@@ -10,9 +10,12 @@
     - [sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Install ohmyzsh]
     - [git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-my-zsh/custom/themes/powerlevel10k, Install powerlevel10k]
     - [sudo apt install fasd, Install fasd]
+    - [sudo apt install ranger, Install ranger]
     - [git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions, Install zsh-autosuggestions]
     - [sudo apt install neovim, Install neovim]
     - [sh -c "curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Install neovimplug]
+    - [sudo apt install tmux, Install tmux]
+    - [git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm, Install tmux-plugins]
     - [rm ~/.zshrc, Remove default zsh]
     
 

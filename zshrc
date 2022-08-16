@@ -2,7 +2,9 @@
 typeset -U path
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
 path+=$HOME/.local/.bin
+path+=$HOME/.local/bin
 path+=/mnt/c/Users/xinyuan/AppData/Local/Programs/Microsoft\ VS\ Code/bin
+
 export ZSH="/home/xinyuan/.oh-my-zsh"
 
 # Ros2
@@ -72,9 +74,5 @@ source $ZSH/oh-my-zsh.sh
 eval "$(fasd --init auto)"
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='mvim'
-fi
+export EDITOR='vim'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

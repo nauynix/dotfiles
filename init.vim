@@ -4,8 +4,9 @@ set number relativenumber
 " Use the system clipboard
 set clipboard=unnamed
 
-" Use \ as the leader key
-let mapleader="\\"
+" Use Space as the leader key
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 " Use \\ to switch between buffers
 nnoremap <leader><leader> :b#<CR>
@@ -40,6 +41,9 @@ Plug 'tpope/vim-sleuth'
 Plug 'ggandor/lightspeed.nvim'
 " Comment with gc
 Plug 'numToStr/Comment.nvim'
+" Call ranger
+Plug 'rbgrouleff/bclose.vim'
+Plug 'francoiscabrol/ranger.vim'
 call plug#end()
 
 " Ctrl-p not index outside source code
