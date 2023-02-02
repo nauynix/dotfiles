@@ -1,6 +1,6 @@
 # Linux & Windows WSL
 typeset -U path
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/sbin
 path+=$HOME/.local/.bin
 path+=$HOME/.local/bin
 path+=/mnt/c/Users/xinyuan/AppData/Local/Programs/Microsoft\ VS\ Code/bin
@@ -27,7 +27,7 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 POWERLEVEL9K_CONTEXT_TEMPLATE=""
 # Show only folder
 typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
-# My Windows home directory.
+# My Windows home directory go with cd ~w
 hash -d w=/mnt/c/Users/xinyuan
 
 
