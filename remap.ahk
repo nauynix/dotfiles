@@ -1,25 +1,20 @@
-; Razer mouse
-F23::Send #{Left}
-F24::Send #{Right}
-F23 & F24:: WinMaximize, A
-
-;Dvorak pause when Scroll lock is on
-
+#NoEnv
+;Only remap when Dvorak is on
 Loop {
-   If GetKeyState("ScrollLock", "T") {
-      Suspend On
-   } else {
-      Suspend Off
-   }
-   Sleep, 50
+SetFormat, Integer, H
+if (DllCall("GetKeyboardLayout", Int,DllCall("GetWindowThreadProcessId", int,WinActive("A"), Int,0))==-0xFFDFBF7){
+	Suspend Off
+}else{
+	Suspend On
+}
+Sleep, 50
+SetFormat, Integer, D
 }
 
-;	=Dvorak Hot Key Fixes ( Autohotkey )
+;Dvorak Hot Key Fixes ( Autohotkey )
 
 CapsLock::Send {BackSpace}
 RShift::Send {Esc}
-;--------------------------------------
-;----------------- CTRL ALT KEY
 
 ^![::Send ^!-
 ^!]::Send ^!=
