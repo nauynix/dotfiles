@@ -1,7 +1,16 @@
-# dotfiles
-Install font in [Cascadia Code](https://github.com/microsoft/cascadia-code/releases)
-Set font in Windows terminal, VS code
+# Set up
 
+Install
+```
+ZSH
+Tmux
+Oh-my-posh
+Neovim
+
+# dotfiles
+```
+oh-my-posh font install
+```
 ```
 sh ./install
 ```
