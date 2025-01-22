@@ -1,25 +1,17 @@
-# Set up
-
-Install
-Cascadia Code NF
+Installation for new laptop
 ```
+Cascadia Code NF
 ZSH
 Tmux
 Oh-my-posh
 Neovim
-Rust
+Cargo
 https://www.youtube.com/watch?v=dFkGNe4oaKk&list=WL&index=57&ab_channel=NoBoilerplate
-# dotfiles
+Astrovim
+Neovide
+Nu
+oh-my-posh
 ```
-oh-my-posh font install
-```
-```
-sh ./install
-```
-
-Then go to nvim and run
-```:PlugInstall```
-
 Rust install
 ```
 cargo install sccache
