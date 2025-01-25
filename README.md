@@ -1,23 +1,33 @@
 Installation for new laptop
+
+Swap caps lock to backspace, right shift to escape
+```
+Windows: use remap.ahk
+Mac: Carabiner
+```
+
+Terminal
 ```
 Cascadia Code NF
 ZSH
 Tmux
+Tmux-plugins
 Oh-my-posh
-Neovim
+ZSH-Autosuggestion
 Cargo
-https://www.youtube.com/watch?v=dFkGNe4oaKk&list=WL&index=57&ab_channel=NoBoilerplate
-Astrovim
+```
+
+Vim
+```
+Neovim
 Neovide
-Nu
-oh-my-posh
+Astrovim
+lazygit
+ripgrep
 ```
-Rust install
+
+Things to consider
 ```
-cargo install sccache
-RUSTC_WRAPPER=sccache cargo install
-...
-Astronvim??
 Nu (Shell)
 Coreutils (GNU commands in rust)
 Starship (Prompt toolkit)
